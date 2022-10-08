@@ -8,13 +8,13 @@ try:
     with open(argv[1]) as file:
         num = file.readline()
 
-        while num != '':
+        while num != '\n':
             num = int(num.split('\n')[0])
 
             i = 2
             while num % i:
                 i+=1
-            print("{}={}*{}".format(num, i, num//i))
+            print("{}={}*{}".format(num, num//i, i))
             num = file.readline()
 except:
     pass
