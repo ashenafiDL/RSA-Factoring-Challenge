@@ -9,7 +9,7 @@ try:
         num = file.readline()
 
         while num != '':
-            num = int(num)
+            num = int(num.split('\n')[0])
 
             i = 2
             while num % i:
