@@ -4,15 +4,17 @@ from sys import argv
 if len(argv) != 2:
     exit()
 
-file = open('num_list.txt', 'r+')
+try:
+    with open(argv[1]) as file:
+        num = file.readline()
 
-num = file.readline()
+        while num != '':
+            num = int(num)
 
-while num != '':
-    i=2
-    num = int(num)
-    while num % i:
-        i+=1
-    print("{}={}*{}".format(num, i, num//i))
-    num = file.readline()
-file.close()
+            i = 2
+            while num % i:
+                i+=1
+            print("{}={}*{}".format(num, i, num//i))
+            num = file.readline()
+except:
+    pass
